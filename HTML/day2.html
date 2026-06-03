@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+  </head>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
+  <body>
+    <h1>This is Homepage</h1>
+    <ul type="square">
+      <li>
+        <a href="about.html" target="_blank">Go to unordered about page</a>
+      </li>
+      <li>
+        <a href="contact.html" target="_blank">Go to unordered contact page</a>
+      </li>
+    </ul>
+    <ol type="i">
+      <li>Go to ordered about page</li>
+      <li>Go to ordered contact page</li>
+    </ol>
+
+    <table width="100%">
+      <tr>
+        <th style="width: 50%">Head 1</th>
+        <th>Head 2</th>
+        <th>Head 3</th>
+      </tr>
+      <tr>
+        <td>Row 1, Cell1</td>
+        <td>Row 1, Cell2</td>
+        <td>Row 1, Cell3</td>
+      </tr>
+      <tr>
+        <td>Row 2,Cell1</td>
+        <td>Row 2,Cell2</td>
+        <td>Row 2,Cell3</td>
+      </tr>
+    </table>
+    <b>Bold text</b>
+    <i>Italics text</i>
+    <mark>Highlight text</mark>
+    <del>Deleted text</del>
+    <article>
+      <section>
+        Lorem1 ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+        tempora rem sit repellendus, illum enim ipsum. Laboriosam, excepturi.
+        Fuga mollitia aperiam quibusdam ex neque eveniet omnis exercitationem
+        sed ab aut?
+      </section>
+      <div>
+        Lorem2 ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+        tempora rem sit repellendus, illum enim ipsum. Laboriosam, excepturi.
+        Fuga mollitia aperiam quibusdam ex neque eveniet omnis exercitationem
+        sed ab aut?
+      </div>
+    </article>
+
+    <form action="./index.html">
+      <input type="text" placeholder="Name" name="name" />
+      <input type="email" placeholder="email" name="email" />
+      <input type="password" placeholder="password" name="password" />
+
+      <!-- Radio -->
+      <br />
+      <input type="radio" id="html" name="fav_language" value="HTML" />
+      <label for="html">HTML</label><br />
+      <input type="radio" id="css" name="fav_language" value="CSS" />
+      <label for="css">CSS</label><br />
+      <input
+        type="radio"
+        id="javascript"
+        name="fav_language"
+        value="JavaScript"
+      />
+      <label for="javascript">JavaScript</label>
+
+      <!-- checkbox -->
+      <section>
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
+        <label for="vehicle1"> I have a bike</label><br />
+        <input type="checkbox" id="vehicle2" name="vehicle2" value="Car" />
+        <label for="vehicle2"> I have a car</label><br />
+        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat" />
+        <label for="vehicle3"> I have a boat</label><br />
+      </section>
+
+      <textarea
+        rows="10"
+        cols="20"
+        style="height: 200; width: 300px"
+        placeholder="Text area"
+      ></textarea
+      ><br />
+      <button>Submit</button>
+      <input type="submit" value="Submit input" />
+    </form>
+    <video width="350" height="200" loop autoplay muted controls>
+      <source src="./304019_medium.mp4" type="video/mp4" />
+    </video>
+
+    <!-- <iframe src="" frameborder="0"></iframe> -->
+    <div>
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/GrlAInfP990?si=WEycMTnO9YqVnY4j"
+        title="YouTube video player"
+        frameborder="0"
+        allow="
+          accelerometer;
+          autoplay;
+          clipboard-write;
+          encrypted-media;
+          gyroscope;
+          picture-in-picture;
+          web-share;
+        "
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <!-- <video width="320" height="240" loops autoplay muted controls>
+      <source src="./354006.mp4" type="video/mp4" />
+      <source src="./assets/video.ogg" type="video/ogg" />
+      Your browser does not support the video tag.
+    </video> -->
+  </body>
+</html>

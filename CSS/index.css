@@ -1,0 +1,16 @@
+.navigation {
+  border: 1px solid black;
+
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+  justify-content: space-around;
+}
+.nav_child {
+}
+.anchor {
+  text-decoration: none;
+  color: black;
+  font-size: 24pt;
+  font-family: monospace;
+}
