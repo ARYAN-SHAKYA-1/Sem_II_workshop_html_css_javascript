@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+AU+VIC+Guides&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body {
+      font-family: "Roboto", "Arial", "sans-serif";
+      font-size: 20px;
+      font-weight: 600;
+      text-align: center;
+    }
+    div > span {
+      color: red;
+    }
+    div p span {
+      color: green;
+    }
+    button {
+      background-color: blue;
+      color: white;
+    }
+    button:hover {
+      background-color: yellow;
+      color: black;
+    }
+    .red {
+      color: red;
+    }
+    #yellow {
+      color: yellow;
+    }
+
+    .unit {
+      font-size: 50px;
+    }
+    #rem {
+      font-size: 1.5rem;
+      background-color: bisque;
+    }
+    #em {
+      font-size: 1.5em;
+      background-color: grey;
+    }
+  </style>
+  <body>
+    <h1 class="red" id="yellow">this is heading</h1>
+    <div>
+      <span>this is span</span>
+      <div>
+        <p>this is para inside div <span>this is span-para</span></p>
+      </div>
+      <p>this is paragraph</p>
+      <button>this is button</button>
+    </div>
+
+    <div class="unit">
+      <p id="rem">this is for rem</p>
+      <p id="em">this is for em</p>
+    </div>
+  </body>
+</html>
