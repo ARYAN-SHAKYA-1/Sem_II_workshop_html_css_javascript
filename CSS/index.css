@@ -25,8 +25,12 @@
 .anchor {
   text-decoration: none;
   color: black;
-  font-size: 24pt;
+  font-size: 18pt;
   font-family: monospace;
+}
+.anchor:hover {
+  color: grey;
+  text-decoration: underline;
 }
 .nav_button {
   border: 1px solid pink;

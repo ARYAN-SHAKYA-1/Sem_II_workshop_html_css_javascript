@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+    ul li {
+      display: inline-block;
+      padding: 20px;
+    }
+    ul li :hover {
+      color: yellow;
+    }
+    ul a:hover {
+      color: blue;
+      text-decoration: underline;
+    }
+    a {
+      text-decoration: none;
+
+      color: black;
+    }
+    nav {
+      background-color: #f0f0f0;
+      text-align: right;
+    }
+    .image_container {
+      width: 700px;
+      height: 875px;
+      background-color: red;
+    }
+    .image_container img {
+      width: 100%;
+      height: 100%;
+      background-color: red;
+      object-fit: contain;
+    }
+    .bg_img_container {
+      height: 100vh;
+      width: 100%;
+      background-image: url("https://plus.unsplash.com/premium_photo-1674583794341-50bb046c49a7?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .bg_img_container h1,
+    .bg_img_container p {
+      color: white;
+      background-color: rgba(87, 5, 5, 0.45);
+      text-align: center;
+      padding: 35px;
+    }
+    form {
+      margin: auto;
+      width: max-content;
+      background: #f0f0f0;
+      padding: 20px;
+      padding-top: 10px;
+    }
+    .form_chld {
+      /* border: 1px solid black; */
+      height: 50px;
+
+      padding: 5px;
+      margin: 2px 0px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .form_text {
+      font-family: sans-serif;
+    }
+
+    .form_input_tag {
+      padding-left: 20px;
+      height: 24px;
+      border: none;
+    }
+    .form_submit_button {
+      color: white;
+      border-radius: 6px;
+      font-size: 18px;
+      height: 24px;
+      width: 100%;
+      background-color: blue;
+      border: 0px;
+    }
+    #submit_button_div {
+      height: max-content;
+      padding: 8px 0px;
+
+      justify-content: center;
+    }
+  </style>
+  <body>
+    <nav style="position: fixed; width: 100%">
+      <ul>
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">About us</a>
+        </li>
+        <li>
+          <a href="#">Contact us</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="image_container">
+      <img
+        src="https://plus.unsplash.com/premium_photo-1674583794341-50bb046c49a7?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt=""
+        srcset=""
+      />
+    </div>
+    <div class="bg_img_container">
+      <h1>background Image</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+        nemo earum odio voluptatem voluptates repudiandae aliquam rem quod,
+        soluta in enim sed cupiditate, ea fugit nesciunt veniam, culpa dicta
+        dolor voluptate esse libero deserunt? Velit nobis accusantium
+        repellendus cupiditate sit iusto hic, odio nostrum temporibus, quos
+        alias vel aliquid delectus.
+      </p>
+    </div>
+    <form>
+      <div class="form_chld">
+        <div class="form_text">Name:</div>
+        <div class="form_input">
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="form_input_tag"
+            placeholder="Enter your name "
+          />
+        </div>
+      </div>
+      <div class="form_chld">
+        <div class="form_text">Email:</div>
+        <div class="form_input">
+          <input
+            type="email"
+            name="Email"
+            id="name"
+            class="form_input_tag"
+            placeholder="Enter your email"
+          />
+        </div>
+      </div>
+      <div class="form_chld">
+        <div class="form_text">Address:</div>
+        <div class="form_input">
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="form_input_tag"
+            placeholder="Enter your  address"
+          />
+        </div>
+      </div>
+      <div class="form_chld">
+        <div class="form_text">Phone Number:</div>
+        <div class="form_input">
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="form_input_tag"
+            placeholder="Enter your Phone number"
+          />
+        </div>
+      </div>
+      <div class="form_chld" id="submit_button_div">
+        <div class="form_input">
+          <input type="button" value="Submit" class="form_submit_button" />
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
