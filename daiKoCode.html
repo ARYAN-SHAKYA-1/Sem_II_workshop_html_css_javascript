@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <title>Todo App</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid d-flex justify-content-between">
+        <a class="navbar-brand" href="#">Todo App</a>
+        <div class="" id="navbarSupportedContent">
+          <form class="d-flex form-search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="container p-5">
+      <!-- section -->
+      <form class="task-section">
+        <div class="mb-3">
+          <label for="task-title" class="form-label">Task Title</label>
+          <input type="text" class="form-control" id="task-title" />
+        </div>
+        <div class="mb-3">
+          <label for="task-desc" class="form-label">Description</label>
+          <textarea rows="5" class="form-control" id="task-desc"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+      <!-- cards -->
+      <div class="row mt-5"></div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const form = document.querySelector(".task-section");
+      const titleInput = document.getElementById("task-title");
+      const descInput = document.getElementById("task-desc");
+      const cardContainer = document.querySelector(".row");
+      let existingTasks = JSON.parse(localStorage.getItem("tasks"));
+      if (!existingTasks) {
+        existingTasks = [];
+      }
+
+      //   exisitingTasks = [
+      //     { title: "Task 1", desc: "Description 1" },
+      //     { title: "Task 2", desc: "Description 2" },
+      // ]
+
+      renderTasks(existingTasks);
+
+      function renderTasks(existingTasks) {
+        cardContainer.innerHTML = "";
+        existingTasks.forEach((task, index) => {
+          const card = document.createElement("div");
+          card.classList.add("col-sm-4", "mb-3");
+          card.innerHTML = `
+                <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">${task.title}</h5>
+                    <p class="card-text">${task.desc}</p>
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-primary edit-btn mx-2" data-index="${index}">Edit</button>
+                        <button class="btn btn-danger delete-btn" data-index="${index}">Delete</button>
+                    </div>
+                </div>
+                </div>
+            `;
+          cardContainer.appendChild(card);
+        });
+      }
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const title = titleInput.value;
+        const desc = descInput.value;
+
+        if (!title || !desc) return;
+
+        existingTasks.push({ title: title, desc: desc });
+        if (existingTasks.length > 0) {
+          localStorage.setItem("tasks", JSON.stringify(existingTasks));
+          renderTasks(existingTasks);
+        }
+        titleInput.value = "";
+        descInput.value = "";
+      });
+
+      cardContainer.addEventListener("click", (e) => {
+        if (e.target.classList.contains("delete-btn")) {
+          const index = e.target.getAttribute("data-index");
+          existingTasks.splice(index, 1);
+          localStorage.setItem("tasks", JSON.stringify(existingTasks));
+          renderTasks(existingTasks);
+        }
+      });
+
+      cardContainer.addEventListener("click", (e) => {
+        if (e.target.classList.contains("edit-btn")) {
+          const index = e.target.getAttribute("data-index");
+          titleInput.value = existingTasks[index].title;
+          descInput.value = existingTasks[index].desc;
+          existingTasks.splice(index, 1);
+          localStorage.setItem("tasks", JSON.stringify(existingTasks));
+          renderTasks(existingTasks);
+        }
+      });
+
+      const searchForm = document.querySelector(".form-search");
+      searchForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const searchTerm = searchForm
+          .querySelector('input[type="search"]')
+          .value.toLowerCase();
+        const filteredTasks = existingTasks.filter(
+          (task) =>
+            task.title.toLowerCase().includes(searchTerm) ||
+            task.desc.toLowerCase().includes(searchTerm),
+        );
+        renderTasks(filteredTasks);
+      });
+
+      //                                                                     debounding
+
+      //   const arr = [1, 2, 4, 6, 8, 9];
+      //   const even = arr.filter((num,i) => num % 2 === 0);
+      //   console.log(even);
+
+      //   const arr = [
+      //     { name: "Sagar", age: 24 },
+      //     { name: "John", age: 30 },
+      //     { name: "Jane", age: 22 },
+      //   ];
+      //   const searchName = "John";
+      //   const filteredArr = arr.filter((obj) =>
+      //     obj.name.toLowerCase().includes(searchName.toLowerCase()),
+      //   );
+    </script>
+  </body>
+</html>

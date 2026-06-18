@@ -1,0 +1,30 @@
+.container-fluid {
+  /* border: 1px solid black; */
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.section_main {
+  /* border: 1px solid black; */
+
+  height: 250px;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+.textDiv {
+  border: 1px solid black;
+
+  width: 700px;
+  /* height: 68px; */
+  padding: 16px;
+}
+.inputBox {
+  width: 650px;
+  height: 32px;
+  border-radius: 12px;
+}
+#description {
+  height: 200px;
+  resize: none;
+}

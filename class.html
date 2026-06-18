@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .blue {
+        background-color: blue;
+      }
+      .red {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>JavaScript</h1>
+      <p class="para-class red" id="first-para "></p>
+      <p class="para-class">this is nothing</p>
+      <p class="para-class">this is nothing 2</p>
+    </div>
+
+    <script>
+      //   const pTag = document.getElementsByTagName("p");
+      //   const pTag = document.getElementsById("first-para");
+      // const pTag = document.getElementsByClassName("para-class");
+
+      const pTag = document.querySelector("div p");
+      pTag.classList.remove("red");
+      pTag.classList.add("blue");
+      console.log(pTag);
+
+      pTag.innerHTML = "this is paragraph tag";
+
+      // for (let i = 0; i < pTag.length; i++) {
+      //   pTag[i].innerHTML += `this is paragraph tag ${i + 1}<h1> heading</h1>`;
+      // }
+
+      // const pTag = document.querySelectorAll("p");
+
+      /*
+      console.log("Hello, world!");
+      const a = 10;
+      let a = 10;
+      var a = 10;
+      var b = "Hello World";
+      var c = false;
+      var d = null;
+      var e;
+      a = "10";
+      console.log(a, b, c, d, e);
+      */
+      // var a = "20";
+      //   //   var concat = a + "\n" + a + "Hello " + a + " World";
+      // var concat = `${a}\n${a}Hello ${a} World`;
+      //   //   var concat = `Hello World`;
+
+      //   console.log(concat);
+      // var a = "10";
+      // var b = 10;
+
+      // console.log(a === b);
+      // console.log(a == b);
+      //   const a = "Ram";
+      //   console.log(a.split("").reverse().join(""));
+
+      // const a = prompt("Enter a number");
+      // console.log(a, typeof a);
+      // const b = Number(a);
+      // console.log(b, typeof b);
+      // if (b < 18) {
+      //   console.log("You are not eligible to vote");
+      // } else {
+      //   console.log("You are eligible to vote");
+      // }
+
+      // const arr = [5, 4, 1, 2];
+      // // for (let i = 0; i < arr.length; i++) {
+      // //   console.log(arr[i]);
+      // // }
+      // console.log("arr", arr);
+      // const sortedArr = arr.sort();
+      // console.log("sortedArr", sortedArr);
+      // arr.push(10);
+      // console.log("push", arr);
+      // const poppedArr = arr.pop();
+      // console.log("pop", poppedArr);
+
+      // const concat1 = arr.concat(newArray);
+      // console.log("concat", concat1);
+      // const newArray = ["a", "b", "c", "d", "e"];
+      // // newArray.splice(2, 0, "e", "f");
+      // // console.log("splice", newArray);
+
+      // const slicedArray = newArray.slice(1, 4);
+      // console.log("slice", slicedArray);
+
+      // function add(a = 0, b = 0) {
+      //   return a + b;
+      // }
+      // const sum = add(10, 20);
+      // console.log(sum);
+
+      // const obj = {
+      //   name: "Ram",
+      //   age: 25,
+      //   city: "Kathmandu",
+      // };
+      // console.log(Object.keys(obj));
+      // console.log(Object.values(obj));
+
+      // console.log(obj.name);
+      // console.log(obj["name"]);
+      // for (let i = 0; i < Object.keys(obj).length; i++) {
+      //   // console.log(i);
+      //   // const keys = Object.keys(obj);
+
+      //   // const values = Object.values(obj);
+      //   // console.log(keys[i], values[i]);
+
+      //   const key = Object.keys(obj)[i];
+      //   const value = obj[key];
+      //   console.log(key, value);
+      // }
+
+      // const obj = [
+      //   {
+      //     name: "Ram",
+      //     age: 25,
+      //     city: "Kathmandu",
+      //   },
+      //   {
+      //     name: "Shyam",
+      //     age: 30,
+      //     city: "Lalitpur",
+      //   },
+      //   {
+      //     name: "Hari",
+      //     age: 35,
+      //     city: "Bhaktapur",
+      //   },
+      // ];
+
+      // for (let i = 0; i < obj.length; i++) {
+      //   console.log(
+      //     `My name is ${obj[i].name} and I am ${obj[i].age} years old and I live in ${obj[i].city}`,
+      //   );
+      // }
+
+      // const newSet = new Set([1, 2, 3, 4, 5, 5, 5, 5]);
+      // const uniqueArray = Array.from(newSet);
+      // console.log(newSet, uniqueArray);
+      // newSet.add(6);
+      // newSet.delete(3);
+      // console.log(newSet);
+    </script>
+  </body>
+</html>

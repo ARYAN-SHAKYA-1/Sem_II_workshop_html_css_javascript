@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input {
+        outline: none;
+      }
+      .dark {
+        background-color: rgb(17, 16, 16);
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>JavaScript events</h1>
+
+      <input type="text" id="my-input" />
+
+      <button id="my-btn">dark mode</button>
+      <form action="">
+        <input type="email" placeholder="name" />
+        <input
+          type="password"
+          placeholder="password"
+          required
+          maxlength="20"
+          minlength="3"
+        />
+        <input
+          type="password"
+          placeholder="Conform Password"
+          id="confirmPassword"
+          required
+        />
+        <input type="submit" placeholder="submit" />
+      </form>
+    </div>
+    <script>
+      const form = document.querySelector("form");
+      const emailInput = document.querySelector('input[type="email"]');
+      const passwordInput = document.querySelector('input[type="password"]');
+      const confirmPasswordInput = document.getElementById("confirmPassword");
+      const errorMessage = document.createElement("p");
+      form.appendChild(errorMessage);
+      form.addEventListener("submit", submitHanderler);
+
+      function submitHanderler(events) {
+        console.log(events);
+        events.preventDefault();
+        console.log("form submitted");
+        console.log(emailInput.value);
+        console.log(passwordInput.value);
+        console.log(confirmPasswordInput.value);
+
+        const passordPattern = /^[a-z][A-Z]\d+$/;
+        if (!passordPattern.test(passwordInput.value)) {
+          errorMessage.innerText =
+            "password must start with a lower case followed by a upper case letter and end with one or more digitd";
+          errorMessage.style.color = "red";
+        } else if (passwordInput.value !== confirmPasswordInput.value) {
+          errorMessage.innerText = "passord dont match!!";
+          errorMessage.style.color = "red";
+        } else {
+          errorMessage.style.color = "green";
+          errorMessage.innerText = "form Submitted successfully!!";
+        }
+      }
+    </script>
+
+    <!-- <script>
+      const btn = document.getElementById("my-btn");
+
+      btn.addEventListener("click", clickHandler);
+      btn.addEventListener("focus", foucsHandler);
+      btn.addEventListener("blur", blurHandler);
+      btn.addEventListener("mouseover", mouseoverhandeler);
+
+      function clickHandler() {
+        console.log("button clicked");
+      }
+
+      function mouseoverhandeler() {
+        btn.style.backgroundColor = "yellow";
+      }
+
+      const input = document.getElementById("my-input");
+
+      const h1Tag = document.createElement("h1");
+      input.addEventListener("input", inputhandler);
+
+      function inputhandler(events) {
+        console.log(events.target.value);
+        h1Tag.innerText = events.target.value;
+        document.body.appendChild(h1Tag);
+      }
+
+      input.addEventListener("focus", foucsHandler);
+      input.addEventListener("blur", blurHandler);
+
+      function foucsHandler() {
+        input.style.border = "2px solid green";
+      }
+      function blurHandler() {
+        input.style.border = "1px solid red";
+      }
+      const clickhandler = () => {
+        body.classList.toggle("dark");
+      };
+      const body = document.body;
+      btn.addEventListener("click", clickhandler);
+    </script> -->
+  </body>
+</html>
